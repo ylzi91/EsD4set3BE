@@ -5,6 +5,9 @@ import jakarta.persistence.EntityTransaction;
 import yurilenzi.entities.Evento;
 import yurilenzi.exception.NullException;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class EventiDAO {
     private final EntityManager entityManager;
 
@@ -35,4 +38,5 @@ public class EventiDAO {
         transaction.commit();
         System.out.println("L'evento '" + found.getTitolo() + "' è stato cancellato");
     }
+
 }
