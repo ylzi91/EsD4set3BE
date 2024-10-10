@@ -7,22 +7,24 @@ import java.util.Date;
 
 @Entity
 @Table(name = "eventi")
-public class Evento {
+@Inheritance(strategy = InheritanceType.JOINED)
+@DiscriminatorColumn(name = "tipo_evento")
+public abstract class Evento {
     @Id
     @GeneratedValue()
-    private long id;
-    private String titolo;
+    protected long id;
+    protected String titolo;
     @Column(name = "data_evento", nullable = false)
-    private LocalDate dataEvento;
-    private String descrizione;
+    protected LocalDate dataEvento;
+    protected String descrizione;
     @Column(name = "tipo_evento", nullable = false)
     @Enumerated(EnumType.STRING)
     private tipoEvento tipoEvento;
     @Column(name = "massimo_partecipanti")
-    private int massimoPartecipanti;
+    protected int massimoPartecipanti;
     @ManyToOne
     @JoinColumn(name = "location_id")
-    private Location location;
+    protected Location location;
 
     public Evento(){
 

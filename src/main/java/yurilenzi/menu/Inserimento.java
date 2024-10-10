@@ -30,9 +30,9 @@ public class Inserimento {
                 String descrizione = scn.nextLine();
                 System.out.println("Inserisci il massimo numero di partecipanti");
                 int partecipanti = Integer.parseInt(scn.nextLine());
-                EventiDAO eventiDAO = new EventiDAO(entityManager);
-                Evento evento = new Evento(titolo, LocalDate.of(anno, mese, giorno), descrizione, tipoEvento.PRIVATO, partecipanti);
-                eventiDAO.save(evento);
+                //EventiDAO eventiDAO = new EventiDAO(entityManager);
+                //Evento evento = new Evento(titolo, LocalDate.of(anno, mese, giorno), descrizione, tipoEvento.PRIVATO, partecipanti);
+                //eventiDAO.save(evento);
             }
             catch (Exception e) {
                 System.out.println("Errore Generico");
